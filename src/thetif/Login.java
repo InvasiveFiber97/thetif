@@ -32,7 +32,6 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -156,10 +155,6 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 420));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hiten\\Pictures\\Camera Roll\\13_profile-512.png")); // NOI18N
-        jLabel7.setText("jLabel7");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 80, 80));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 420));
 
         pack();
@@ -231,7 +226,11 @@ public class Login extends javax.swing.JFrame {
         logon lg = new logon();
         u = new String(jTextField2.getText());
         p = new String(jPasswordField1.getPassword());        
-        lg.logged(u, p);
+        if(lg.logged(u, p))
+        {
+            this.setVisible(false);
+            System.exit(0);
+        }
     }//GEN-LAST:event_jLabel5MouseClicked
 
     
@@ -271,7 +270,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButton jRadioButton1;
