@@ -1,6 +1,13 @@
 package thetif;
 
+import com.mysql.jdbc.Statement;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
@@ -222,14 +229,30 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MousePressed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        String u,p;
-        logon lg = new logon();
-        u = new String(jTextField2.getText());
-        p = new String(jPasswordField1.getPassword());        
-        if(lg.logged(u, p))
-        {
-            this.setVisible(false);
-            System.exit(0);
+        try {
+            //Class.forName("com.mysql.jdbc.Driver");
+            String a = jTextField2.getText();
+            String b = jPasswordField1.getText();
+            int flag = 1;
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "1234");
+            Statement st = (Statement) con.createStatement();
+            ResultSet rs = st.executeQuery("select * from logon;");
+            while(rs.next())
+            {
+                if(rs.getString(2) == a && rs.getString(3) ==  b)
+                {
+                    flag = 0;
+                    break;
+                }
+            }
+            if(flag == 0)
+            {
+                System.out.println("Logged on");
+            }
+            else
+                System.out.println("Invalid Details");
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
