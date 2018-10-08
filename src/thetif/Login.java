@@ -4,6 +4,7 @@ import com.mysql.jdbc.Statement;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -250,7 +251,11 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Logged On");
             }
             else
-                JOptionPane.showMessageDialog(null,"Log in failed!");
+                JOptionPane.showMessageDialog(null,"Log in failed");
+            /*PreparedStatement pst=con.prepareStatement("insert into logon (user,password) values(?,?)");
+            pst.setString(2, b);
+            pst.setString(1, a);
+            pst.executeUpdate();*/
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
