@@ -234,7 +234,7 @@ public class Login extends javax.swing.JFrame {
             String a = jTextField2.getText();
             String b = jPasswordField1.getText();
             int flag = 1;
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login?autoReconnect=true&useSSL=false", "root", "1234");
             Statement st = (Statement) con.createStatement();
             ResultSet rs = st.executeQuery("select * from logon;");
             while(rs.next())
@@ -247,10 +247,10 @@ public class Login extends javax.swing.JFrame {
             }
             if(flag == 0)
             {
-                System.out.println("Logged on");
+                JOptionPane.showMessageDialog(null,"Logged On");
             }
             else
-                System.out.println("Invalid Details");
+                JOptionPane.showMessageDialog(null,"Log in failed");
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
