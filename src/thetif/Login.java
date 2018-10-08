@@ -250,7 +250,7 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Logged On");
             }
             else
-                JOptionPane.showMessageDialog(null,"Log in failed");
+                JOptionPane.showMessageDialog(null,"Log in failed!");
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
