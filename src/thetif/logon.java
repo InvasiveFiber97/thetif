@@ -5,10 +5,15 @@ import javax.swing.JOptionPane;
 public class logon {
     public boolean logged(String user, String password)
     {
-        if(user.contentEquals("user") && password.contentEquals("pass")) 
+        if(user.contentEquals("username") && password.contentEquals("123456")) 
         {
-            JOptionPane.showMessageDialog(null,"Logged On");
-            return true;
+            //JOptionPane.showMessageDialog(null,"Logged On");
+            //return true;
+            dashboard dsh = new dashboard();
+            dsh.setVisible(true);
+            Login log = new Login();
+            log.setVisible(false);
+            log.dispose();
         }
         else
         {
@@ -24,5 +29,6 @@ public class logon {
         PRIMARY KEY (`id`),
         UNIQUE KEY `username` (`username`),
         UNIQUE KEY `email` (`email`)) */
+        return false;
     }
 }

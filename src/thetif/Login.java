@@ -230,7 +230,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MousePressed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        try {
+        String a = jTextField2.getText();
+        String b = jPasswordField1.getText();
+        logon lg = new logon();
+        lg.logged(a, b);
+        /*try {
             //Class.forName("com.mysql.jdbc.Driver");
             String a = jTextField2.getText();
             String b = jPasswordField1.getText();
@@ -252,13 +256,13 @@ public class Login extends javax.swing.JFrame {
             }
             else
                 JOptionPane.showMessageDialog(null,"Log in failed");
-            /*PreparedStatement pst=con.prepareStatement("insert into logon (user,password) values(?,?)");
+            PreparedStatement pst=con.prepareStatement("insert into logon (user,password) values(?,?)");
             pst.setString(2, b);
             pst.setString(1, a);
-            pst.executeUpdate();*/
+            pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }//GEN-LAST:event_jLabel5MouseClicked
 
     
