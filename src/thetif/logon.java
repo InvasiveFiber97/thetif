@@ -11,13 +11,13 @@ public class logon {
             //return true;
             dashboard dsh = new dashboard();
             dsh.setVisible(true);
-            Login log = new Login();
+            /*Login log = new Login();
             log.setVisible(false);
-            log.dispose();
+            log.dispose();*/
         }
         else
         {
-            JOptionPane.showMessageDialog(null,"Failed");
+            JOptionPane.showMessageDialog(null,"Login Failed");
             return false;
         }
         
