@@ -235,7 +235,7 @@ public class Login extends javax.swing.JFrame {
         logon lg = new logon();
         lg.logged(a, b);
         
-        try {
+        /*try {
             Class.forName("com.mysql.jdbc.Driver");
             int flag = 1;
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login?autoReconnect=true&useSSL=false", "root", "1234");
@@ -258,12 +258,12 @@ public class Login extends javax.swing.JFrame {
             /*PreparedStatement pst=con.prepareStatement("insert into logon (user,password) values(?,?)");
             pst.setString(2, b);
             pst.setString(1, a);
-            pst.executeUpdate();*/
+            pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }//GEN-LAST:event_jLabel5MouseClicked
 
     

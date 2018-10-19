@@ -1,7 +1,16 @@
 package thetif;
 
 import java.awt.Color;
+import java.io.File;
 import java.util.Locale;
+import java.util.Vector;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
 
 
 public class dashboard extends javax.swing.JFrame {
@@ -38,14 +47,14 @@ public class dashboard extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         attendy = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        subject2 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        course2 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        attendance_check = new javax.swing.JTable();
+        course1 = new javax.swing.JComboBox<>();
+        subject1 = new javax.swing.JComboBox<>();
         datesy = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         boks = new javax.swing.JPanel();
@@ -156,13 +165,12 @@ public class dashboard extends javax.swing.JFrame {
         jLabel10.setOpaque(true);
         attendy.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        subject2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                subject2ActionPerformed(evt);
             }
         });
-        attendy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 170, 30));
+        attendy.add(subject2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 170, 30));
 
         jLabel1.setBackground(new java.awt.Color(87, 141, 44));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -176,17 +184,22 @@ public class dashboard extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Check");
         jLabel2.setOpaque(true);
-        attendy.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 170, 30));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
             }
         });
-        attendy.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 170, 30));
+        attendy.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 170, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        course2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "TYCS", "SYCS", "FYCS" }));
+        course2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                course2ActionPerformed(evt);
+            }
+        });
+        attendy.add(course2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 170, 30));
+
+        attendance_check.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -197,25 +210,31 @@ public class dashboard extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        attendance_check.setEnabled(false);
+        jScrollPane1.setViewportView(attendance_check);
+        if (attendance_check.getColumnModel().getColumnCount() > 0) {
+            attendance_check.getColumnModel().getColumn(0).setHeaderValue("Title 1");
+            attendance_check.getColumnModel().getColumn(1).setHeaderValue("Title 2");
+            attendance_check.getColumnModel().getColumn(2).setHeaderValue("Title 3");
+            attendance_check.getColumnModel().getColumn(3).setHeaderValue("Title 4");
+        }
 
         attendy.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 540, 400));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        course1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "TYCS", "SYCS", "FYCS" }));
+        course1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                course1ActionPerformed(evt);
             }
         });
-        attendy.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 30));
+        attendy.add(course1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 30));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        subject1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                subject1ActionPerformed(evt);
             }
         });
-        attendy.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 170, 30));
+        attendy.add(subject1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 170, 30));
 
         getContentPane().add(attendy, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 710, 440));
 
@@ -721,21 +740,119 @@ public class dashboard extends javax.swing.JFrame {
         boks.setVisible(false);
     }//GEN-LAST:event_settingsMouseClicked
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void subject2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_subject2ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    private void course2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_course2ActionPerformed
+        if(course2.getSelectedItem()=="TYCS")
+        {
+            subject2.removeAllItems();
+            subject2.addItem("IOT");
+            subject2.addItem("Linux");
+            subject2.addItem("STQA");
+            subject2.addItem("Gaming");
+            subject2.addItem("Networking");            
+        }
+        else if(course2.getSelectedItem()=="SYCS")
+        {
+            subject2.removeAllItems();
+            subject2.addItem("Linux");
+            subject2.addItem("Java");
+            subject2.addItem("Networks");
+            subject2.addItem("Graphs");
+            subject2.addItem("Python");            
+        }
+        else if(course2.getSelectedItem()=="FYCS")
+        {
+            subject2.removeAllItems();
+            subject2.addItem("FOSS");
+            subject2.addItem("Calculus");
+            subject2.addItem("Statistics");
+            subject2.addItem("IOT");
+            subject2.addItem("Python");            
+        }
+        else if(course2.getSelectedItem()=="")
+        {
+            subject2.removeAllItems();          
+        }
+    }//GEN-LAST:event_course2ActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    private void course1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_course1ActionPerformed
+        if(course1.getSelectedItem()=="TYCS")
+        {
+            subject1.removeAllItems();
+            subject1.addItem("IOT");
+            subject1.addItem("Linux");
+            subject1.addItem("STQA");
+            subject1.addItem("Gaming");
+            subject1.addItem("Networking");            
+        }
+        else if(course1.getSelectedItem()=="SYCS")
+        {
+            subject1.removeAllItems();
+            subject1.addItem("Linux");
+            subject1.addItem("Java");
+            subject1.addItem("Networks");
+            subject1.addItem("Graphs");
+            subject1.addItem("Python");            
+        }
+        else if(course1.getSelectedItem()=="FYCS")
+        {
+            subject1.removeAllItems();
+            subject1.addItem("FOSS");
+            subject1.addItem("Calculus");
+            subject1.addItem("Statistics");
+            subject1.addItem("IOT");
+            subject1.addItem("Python");            
+        }
+        else if(course1.getSelectedItem()=="")
+        {
+            subject1.removeAllItems();          
+        }
+    }//GEN-LAST:event_course1ActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void subject1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_subject1ActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        Vector headers = new Vector();
+        Vector data = new Vector();
+
+        File file = new File("D:\\attendance.xls");
+        try 
+        {
+            Workbook workbook = Workbook.getWorkbook(file);
+            Sheet sheet = workbook.getSheet(1);
+            headers.clear();
+            for (int i = 0; i < sheet.getColumns(); i++)
+            {
+                Cell cell1 = sheet.getCell(i, 0);
+                headers.add(cell1.getContents());
+            }
+            data.clear();
+            for (int j = 1; j < sheet.getRows(); j++) 
+            {
+                Vector d = new Vector();
+                for (int i = 0; i < sheet.getColumns(); i++)
+                {
+                    Cell cell = sheet.getCell(i, j);
+                    d.add(cell.getContents());
+                }
+                d.add("\n");
+                data.add(d);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        DefaultTableModel model = new DefaultTableModel(data,headers);
+        attendance_check.setModel(model);
+        attendance_check.setAutoCreateRowSorter(true);
+        model = new DefaultTableModel(data, headers);
+        attendance_check.setModel(model);
+        attendance_check.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     
     public static void main(String args[]) {
@@ -772,20 +889,19 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel anoun;
     private javax.swing.JPanel asign;
     private javax.swing.JLabel attend;
-    private javax.swing.JPanel attendy;
+    public javax.swing.JTable attendance_check;
+    public javax.swing.JPanel attendy;
     private javax.swing.JPanel boks;
     private javax.swing.JLabel books;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> course1;
+    private javax.swing.JComboBox<String> course2;
     private javax.swing.JPanel dasb;
     private javax.swing.JLabel dashy;
     private javax.swing.JLabel dates;
     private javax.swing.JPanel datesy;
     private javax.swing.JPanel header;
     private javax.swing.JLabel homeworks;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -797,7 +913,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -811,20 +927,21 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel portal;
     private javax.swing.JPanel porty;
     private javax.swing.JPanel setsng;
     private javax.swing.JLabel settings;
     private javax.swing.JPanel sidepane;
+    private javax.swing.JComboBox<String> subject1;
+    private javax.swing.JComboBox<String> subject2;
     private javax.swing.JPanel syll;
     private javax.swing.JLabel syllabus;
     // End of variables declaration//GEN-END:variables
