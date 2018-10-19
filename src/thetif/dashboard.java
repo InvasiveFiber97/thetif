@@ -1,6 +1,7 @@
 package thetif;
 
 import java.awt.Color;
+import java.util.Locale;
 
 
 public class dashboard extends javax.swing.JFrame {
@@ -9,13 +10,40 @@ public class dashboard extends javax.swing.JFrame {
     public dashboard() {
         initComponents();
     }
+    
 
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        content = new javax.swing.JPanel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        dasb = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        attendy = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        datesy = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        boks = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        anoun = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        asign = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        syll = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        porty = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        setsng = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         sidepane = new javax.swing.JPanel();
         dashy = new javax.swing.JLabel();
@@ -29,12 +57,180 @@ public class dashboard extends javax.swing.JFrame {
         settings = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(920, 543));
+        setMinimumSize(new java.awt.Dimension(920, 543));
+        setPreferredSize(new java.awt.Dimension(920, 543));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        content.setBackground(new java.awt.Color(34, 109, 128));
-        content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 450));
+        dasb.setBackground(new java.awt.Color(34, 109, 128));
+        dasb.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel9.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel9.setText("Dashboard");
+        jLabel9.setOpaque(true);
+        dasb.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(dasb, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
+
+        attendy.setBackground(new java.awt.Color(34, 109, 128));
+        attendy.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel10.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel10.setText("Attendance");
+        jLabel10.setOpaque(true);
+        attendy.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        attendy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 170, 30));
+
+        jLabel1.setBackground(new java.awt.Color(87, 141, 44));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Add");
+        jLabel1.setOpaque(true);
+        attendy.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, 30));
+
+        jLabel2.setBackground(new java.awt.Color(87, 141, 44));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Check");
+        jLabel2.setOpaque(true);
+        attendy.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 170, 30));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        attendy.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 170, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        attendy.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 540, 400));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+        attendy.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 30));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+        attendy.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 170, 30));
+
+        getContentPane().add(attendy, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 710, 440));
+
+        datesy.setBackground(new java.awt.Color(34, 109, 128));
+        datesy.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel11.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel11.setText("Important Dates");
+        jLabel11.setOpaque(true);
+        datesy.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(datesy, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
+
+        boks.setBackground(new java.awt.Color(34, 109, 128));
+        boks.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel12.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel12.setText("Books");
+        jLabel12.setOpaque(true);
+        boks.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(boks, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
+
+        anoun.setBackground(new java.awt.Color(34, 109, 128));
+        anoun.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel4.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel4.setText("Announcements");
+        jLabel4.setOpaque(true);
+        anoun.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(anoun, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
+
+        asign.setBackground(new java.awt.Color(34, 109, 128));
+        asign.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel13.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel13.setText("Assignments");
+        jLabel13.setOpaque(true);
+        asign.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(asign, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
+
+        syll.setBackground(new java.awt.Color(34, 109, 128));
+        syll.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel5.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel5.setText("Syllabus");
+        jLabel5.setOpaque(true);
+        syll.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(syll, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
+
+        porty.setBackground(new java.awt.Color(34, 109, 128));
+        porty.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel6.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel6.setText("Teacher Portal");
+        jLabel6.setOpaque(true);
+        porty.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(porty, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
+
+        setsng.setBackground(new java.awt.Color(34, 109, 128));
+        setsng.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel7.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel7.setText("Settings");
+        jLabel7.setOpaque(true);
+        setsng.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(setsng, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
 
         header.setBackground(new java.awt.Color(46, 95, 117));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,6 +245,9 @@ public class dashboard extends javax.swing.JFrame {
         dashy.setText("Dashboard");
         dashy.setOpaque(true);
         dashy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dashyMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 dashyMousePressed(evt);
             }
@@ -56,7 +255,7 @@ public class dashboard extends javax.swing.JFrame {
                 dashyMouseReleased(evt);
             }
         });
-        sidepane.add(dashy, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 3, 198, 47));
+        sidepane.add(dashy, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 3, 198, 45));
         dashy.getAccessibleContext().setAccessibleName("dashboard");
 
         attend.setBackground(new java.awt.Color(87, 141, 44));
@@ -65,6 +264,9 @@ public class dashboard extends javax.swing.JFrame {
         attend.setText("Attendance");
         attend.setOpaque(true);
         attend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                attendMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 attendMousePressed(evt);
             }
@@ -72,7 +274,7 @@ public class dashboard extends javax.swing.JFrame {
                 attendMouseReleased(evt);
             }
         });
-        sidepane.add(attend, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 53, 198, 47));
+        sidepane.add(attend, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 51, 198, 45));
 
         dates.setBackground(new java.awt.Color(87, 141, 44));
         dates.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
@@ -80,6 +282,9 @@ public class dashboard extends javax.swing.JFrame {
         dates.setText("Important Dates");
         dates.setOpaque(true);
         dates.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                datesMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 datesMousePressed(evt);
             }
@@ -87,7 +292,7 @@ public class dashboard extends javax.swing.JFrame {
                 datesMouseReleased(evt);
             }
         });
-        sidepane.add(dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 103, 198, 47));
+        sidepane.add(dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 99, 198, 45));
 
         books.setBackground(new java.awt.Color(87, 141, 44));
         books.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
@@ -95,6 +300,9 @@ public class dashboard extends javax.swing.JFrame {
         books.setText("Books");
         books.setOpaque(true);
         books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                booksMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 booksMousePressed(evt);
             }
@@ -102,7 +310,7 @@ public class dashboard extends javax.swing.JFrame {
                 booksMouseReleased(evt);
             }
         });
-        sidepane.add(books, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 153, 198, 47));
+        sidepane.add(books, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 147, 198, 45));
 
         announce.setBackground(new java.awt.Color(87, 141, 44));
         announce.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
@@ -110,6 +318,9 @@ public class dashboard extends javax.swing.JFrame {
         announce.setText("Announcements");
         announce.setOpaque(true);
         announce.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                announceMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 announceMousePressed(evt);
             }
@@ -117,7 +328,7 @@ public class dashboard extends javax.swing.JFrame {
                 announceMouseReleased(evt);
             }
         });
-        sidepane.add(announce, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 203, 198, 47));
+        sidepane.add(announce, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 195, 198, 45));
 
         homeworks.setBackground(new java.awt.Color(87, 141, 44));
         homeworks.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
@@ -125,6 +336,9 @@ public class dashboard extends javax.swing.JFrame {
         homeworks.setText("Assignments");
         homeworks.setOpaque(true);
         homeworks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeworksMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 homeworksMousePressed(evt);
             }
@@ -132,7 +346,7 @@ public class dashboard extends javax.swing.JFrame {
                 homeworksMouseReleased(evt);
             }
         });
-        sidepane.add(homeworks, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 253, 198, 47));
+        sidepane.add(homeworks, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 243, 198, 45));
 
         syllabus.setBackground(new java.awt.Color(87, 141, 44));
         syllabus.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
@@ -140,6 +354,9 @@ public class dashboard extends javax.swing.JFrame {
         syllabus.setText("Syllabus");
         syllabus.setOpaque(true);
         syllabus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                syllabusMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 syllabusMousePressed(evt);
             }
@@ -147,7 +364,7 @@ public class dashboard extends javax.swing.JFrame {
                 syllabusMouseReleased(evt);
             }
         });
-        sidepane.add(syllabus, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 303, 198, 47));
+        sidepane.add(syllabus, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 291, 198, 45));
 
         portal.setBackground(new java.awt.Color(87, 141, 44));
         portal.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
@@ -155,6 +372,9 @@ public class dashboard extends javax.swing.JFrame {
         portal.setText("Teacher's Portal");
         portal.setOpaque(true);
         portal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                portalMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 portalMousePressed(evt);
             }
@@ -162,7 +382,7 @@ public class dashboard extends javax.swing.JFrame {
                 portalMouseReleased(evt);
             }
         });
-        sidepane.add(portal, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 353, 198, 47));
+        sidepane.add(portal, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 339, 198, 45));
 
         settings.setBackground(new java.awt.Color(87, 141, 44));
         settings.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
@@ -170,6 +390,9 @@ public class dashboard extends javax.swing.JFrame {
         settings.setText("Settings");
         settings.setOpaque(true);
         settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 settingsMousePressed(evt);
             }
@@ -177,9 +400,9 @@ public class dashboard extends javax.swing.JFrame {
                 settingsMouseReleased(evt);
             }
         });
-        sidepane.add(settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 403, 198, 44));
+        sidepane.add(settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 387, 198, 45));
 
-        getContentPane().add(sidepane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 450));
+        getContentPane().add(sidepane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -292,8 +515,133 @@ public class dashboard extends javax.swing.JFrame {
         settings.setBackground(new Color(r,g,b));
     }//GEN-LAST:event_settingsMouseReleased
 
+    private void dashyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashyMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(false);
+        syll.setVisible(false);
+        asign.setVisible(false);
+        anoun.setVisible(false);
+        dasb.setVisible(true);
+        attendy.setVisible(false);
+        datesy.setVisible(false);
+        boks.setVisible(false);
+    }//GEN-LAST:event_dashyMouseClicked
+
+    private void attendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attendMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(false);
+        syll.setVisible(false);
+        asign.setVisible(false);
+        anoun.setVisible(false);
+        dasb.setVisible(false);
+        attendy.setVisible(true);
+        datesy.setVisible(false);
+        boks.setVisible(false);
+    }//GEN-LAST:event_attendMouseClicked
+
+    private void datesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datesMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(false);
+        syll.setVisible(false);
+        asign.setVisible(false);
+        anoun.setVisible(false);
+        dasb.setVisible(false);
+        attendy.setVisible(false);
+        datesy.setVisible(true);
+        boks.setVisible(false);
+    }//GEN-LAST:event_datesMouseClicked
+
+    private void booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_booksMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(false);
+        syll.setVisible(false);
+        asign.setVisible(false);
+        anoun.setVisible(false);
+        dasb.setVisible(false);
+        attendy.setVisible(false);
+        datesy.setVisible(false);
+        boks.setVisible(true);
+    }//GEN-LAST:event_booksMouseClicked
+
+    private void announceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_announceMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(false);
+        syll.setVisible(false);
+        asign.setVisible(false);
+        anoun.setVisible(true);
+        dasb.setVisible(false);
+        attendy.setVisible(false);
+        datesy.setVisible(false);
+        boks.setVisible(false);
+    }//GEN-LAST:event_announceMouseClicked
+
+    private void homeworksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeworksMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(false);
+        syll.setVisible(false);
+        asign.setVisible(true);
+        anoun.setVisible(false);
+        dasb.setVisible(false);
+        attendy.setVisible(false);
+        datesy.setVisible(false);
+        boks.setVisible(false);
+    }//GEN-LAST:event_homeworksMouseClicked
+
+    private void syllabusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syllabusMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(false);
+        syll.setVisible(true);
+        asign.setVisible(false);
+        anoun.setVisible(false);
+        dasb.setVisible(false);
+        attendy.setVisible(false);
+        datesy.setVisible(false);
+        boks.setVisible(false);
+    }//GEN-LAST:event_syllabusMouseClicked
+
+    private void portalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_portalMouseClicked
+        setsng.setVisible(false);
+        porty.setVisible(true);
+        syll.setVisible(false);
+        asign.setVisible(false);
+        anoun.setVisible(false);
+        dasb.setVisible(false);
+        attendy.setVisible(false);
+        datesy.setVisible(false);
+        boks.setVisible(false);
+    }//GEN-LAST:event_portalMouseClicked
+
+    private void settingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseClicked
+        setsng.setVisible(true);
+        porty.setVisible(false);
+        syll.setVisible(false);
+        asign.setVisible(false);
+        anoun.setVisible(false);
+        dasb.setVisible(false);
+        attendy.setVisible(false);
+        datesy.setVisible(false);
+        boks.setVisible(false);
+    }//GEN-LAST:event_settingsMouseClicked
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
     
     public static void main(String args[]) {
+        
         
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -323,16 +671,42 @@ public class dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel announce;
+    private javax.swing.JPanel anoun;
+    private javax.swing.JPanel asign;
     private javax.swing.JLabel attend;
+    private javax.swing.JPanel attendy;
+    private javax.swing.JPanel boks;
     private javax.swing.JLabel books;
-    private javax.swing.JPanel content;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JPanel dasb;
     private javax.swing.JLabel dashy;
     private javax.swing.JLabel dates;
+    private javax.swing.JPanel datesy;
     private javax.swing.JPanel header;
     private javax.swing.JLabel homeworks;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel portal;
+    private javax.swing.JPanel porty;
+    private javax.swing.JPanel setsng;
     private javax.swing.JLabel settings;
     private javax.swing.JPanel sidepane;
+    private javax.swing.JPanel syll;
     private javax.swing.JLabel syllabus;
     // End of variables declaration//GEN-END:variables
 }
