@@ -20,6 +20,13 @@ public class dashboard extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         dasb = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
         attendy = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -36,6 +43,11 @@ public class dashboard extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         anoun = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         asign = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         syll = new javax.swing.JPanel();
@@ -72,6 +84,28 @@ public class dashboard extends javax.swing.JFrame {
         jLabel9.setText("Dashboard");
         jLabel9.setOpaque(true);
         dasb.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        dasb.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 10, 380));
+        dasb.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 300, 270));
+
+        jLabel15.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Last Name");
+        dasb.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 170, 30));
+
+        jLabel16.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("First Name");
+        dasb.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 170, 30));
+
+        jLabel18.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel18.setText("Subject");
+        dasb.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 180, 40));
+        dasb.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 260, 20));
+
+        jLabel17.setText("jLabel17");
+        dasb.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 84, 260, 30));
 
         getContentPane().add(dasb, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
 
@@ -181,6 +215,33 @@ public class dashboard extends javax.swing.JFrame {
         jLabel4.setText("Announcements");
         jLabel4.setOpaque(true);
         anoun.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        jLabel3.setBackground(new java.awt.Color(87, 141, 44));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Previous Announcements");
+        jLabel3.setOpaque(true);
+        anoun.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 170, 30));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane3.setViewportView(jTextArea2);
+
+        anoun.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 510, 110));
+
+        jLabel8.setBackground(new java.awt.Color(87, 141, 44));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Check Announcement");
+        jLabel8.setOpaque(true);
+        anoun.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 170, 30));
+
+        jLabel14.setBackground(new java.awt.Color(87, 141, 44));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Announce");
+        jLabel14.setOpaque(true);
+        anoun.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 170, 30));
 
         getContentPane().add(anoun, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
 
@@ -516,12 +577,12 @@ public class dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_settingsMouseReleased
 
     private void dashyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashyMouseClicked
+        dasb.setVisible(true);
         setsng.setVisible(false);
         porty.setVisible(false);
         syll.setVisible(false);
         asign.setVisible(false);
-        anoun.setVisible(false);
-        dasb.setVisible(true);
+        anoun.setVisible(false);        
         attendy.setVisible(false);
         datesy.setVisible(false);
         boks.setVisible(false);
@@ -693,14 +754,26 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel portal;
     private javax.swing.JPanel porty;
     private javax.swing.JPanel setsng;
