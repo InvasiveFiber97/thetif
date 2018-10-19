@@ -819,32 +819,84 @@ public class dashboard extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         Vector headers = new Vector();
         Vector data = new Vector();
-
         File file = new File("D:\\attendance.xls");
-        try 
+        if(course1.getSelectedItem()=="TYCS")
         {
-            Workbook workbook = Workbook.getWorkbook(file);
-            Sheet sheet = workbook.getSheet(1);
-            headers.clear();
-            for (int i = 0; i < sheet.getColumns(); i++)
+            if(subject1.getSelectedItem()=="IOT")
             {
-                Cell cell1 = sheet.getCell(i, 0);
-                headers.add(cell1.getContents());
-            }
-            data.clear();
-            for (int j = 1; j < sheet.getRows(); j++) 
-            {
-                Vector d = new Vector();
-                for (int i = 0; i < sheet.getColumns(); i++)
+                try 
                 {
-                    Cell cell = sheet.getCell(i, j);
-                    d.add(cell.getContents());
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(0);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
                 }
-                d.add("\n");
-                data.add(d);
             }
-        }catch (Exception e) {
-            e.printStackTrace();
+            else if(subject1.getSelectedItem()=="Linux")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(1);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="STQA")
+            {
+            
+            }else if(subject1.getSelectedItem()=="Gaming")
+            {
+            
+            }
+            else if(subject1.getSelectedItem()=="Networking")
+            {
+            
+            }
+        }
+        else if(course1.getSelectedItem()=="SYCS")
+        {
+            
+        }
+        else if(course1.getSelectedItem()=="FYCS")
+        {
+            
         }
         DefaultTableModel model = new DefaultTableModel(data,headers);
         attendance_check.setModel(model);
