@@ -21,12 +21,21 @@ public class dashboard extends javax.swing.JFrame {
         dasb = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
         attendy = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -87,7 +96,6 @@ public class dashboard extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         dasb.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 10, 380));
-        dasb.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 300, 270));
 
         jLabel15.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -106,6 +114,35 @@ public class dashboard extends javax.swing.JFrame {
 
         jLabel17.setText("jLabel17");
         dasb.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 84, 260, 30));
+
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Your Image Here");
+        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51), 3));
+        dasb.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 300, 270));
+
+        jLabel20.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel20.setText("Department");
+        dasb.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 180, 40));
+
+        jLabel21.setText("jLabel17");
+        dasb.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 260, 30));
+        dasb.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 195, 260, 20));
+
+        jLabel22.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel22.setText("HOD");
+        dasb.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 180, 40));
+
+        jLabel23.setText("jLabel17");
+        dasb.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 260, 30));
+        dasb.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 260, 20));
+
+        jLabel24.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel24.setText("Birth Date");
+        dasb.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 180, 40));
+
+        jLabel25.setText("jLabel17");
+        dasb.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 260, 30));
+        dasb.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 260, 20));
 
         getContentPane().add(dasb, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
 
@@ -759,7 +796,14 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -767,11 +811,13 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel portal;

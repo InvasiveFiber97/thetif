@@ -11,6 +11,8 @@ public class logon {
             //return true;
             dashboard dsh = new dashboard();
             dsh.setVisible(true);
+            Login lgn = new Login();
+            lgn.setVisible(false);
             
             /*Login log = new Login();
             log.setVisible(false);

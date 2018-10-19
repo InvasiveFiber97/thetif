@@ -234,10 +234,9 @@ public class Login extends javax.swing.JFrame {
         String b = jPasswordField1.getText();
         logon lg = new logon();
         lg.logged(a, b);
-        /*try {
-            //Class.forName("com.mysql.jdbc.Driver");
-            String a = jTextField2.getText();
-            String b = jPasswordField1.getText();
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
             int flag = 1;
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login?autoReconnect=true&useSSL=false", "root", "1234");
             Statement st = (Statement) con.createStatement();
@@ -256,13 +255,15 @@ public class Login extends javax.swing.JFrame {
             }
             else
                 JOptionPane.showMessageDialog(null,"Log in failed");
-            PreparedStatement pst=con.prepareStatement("insert into logon (user,password) values(?,?)");
+            /*PreparedStatement pst=con.prepareStatement("insert into logon (user,password) values(?,?)");
             pst.setString(2, b);
             pst.setString(1, a);
-            pst.executeUpdate();
+            pst.executeUpdate();*/
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel5MouseClicked
 
     
