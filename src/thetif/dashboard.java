@@ -1,10 +1,13 @@
 package thetif;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
 import java.util.Locale;
 import java.util.Vector;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -47,10 +50,7 @@ public class dashboard extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         attendy = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        subject2 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        course2 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         attendance_check = new javax.swing.JTable();
         course1 = new javax.swing.JComboBox<>();
@@ -61,20 +61,23 @@ public class dashboard extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         anoun = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         asign = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         syll = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        subject = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         porty = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         setsng = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         sidepane = new javax.swing.JPanel();
         dashy = new javax.swing.JLabel();
         attend = new javax.swing.JLabel();
@@ -108,12 +111,12 @@ public class dashboard extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Last Name");
+        jLabel15.setText("Pore");
         dasb.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 170, 30));
 
         jLabel16.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("First Name");
+        jLabel16.setText("Minal");
         dasb.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 170, 30));
 
         jLabel18.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -121,7 +124,7 @@ public class dashboard extends javax.swing.JFrame {
         dasb.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 180, 40));
         dasb.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 260, 20));
 
-        jLabel17.setText("jLabel17");
+        jLabel17.setText("Networking");
         dasb.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 84, 260, 30));
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -133,7 +136,7 @@ public class dashboard extends javax.swing.JFrame {
         jLabel20.setText("Department");
         dasb.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 180, 40));
 
-        jLabel21.setText("jLabel17");
+        jLabel21.setText("IT");
         dasb.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 260, 30));
         dasb.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 195, 260, 20));
 
@@ -141,7 +144,7 @@ public class dashboard extends javax.swing.JFrame {
         jLabel22.setText("HOD");
         dasb.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 180, 40));
 
-        jLabel23.setText("jLabel17");
+        jLabel23.setText("Seema Raghul");
         dasb.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 260, 30));
         dasb.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 260, 20));
 
@@ -149,7 +152,7 @@ public class dashboard extends javax.swing.JFrame {
         jLabel24.setText("Birth Date");
         dasb.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 180, 40));
 
-        jLabel25.setText("jLabel17");
+        jLabel25.setText("21/05/1982");
         dasb.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 260, 30));
         dasb.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 260, 20));
 
@@ -165,20 +168,6 @@ public class dashboard extends javax.swing.JFrame {
         jLabel10.setOpaque(true);
         attendy.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
 
-        subject2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subject2ActionPerformed(evt);
-            }
-        });
-        attendy.add(subject2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 170, 30));
-
-        jLabel1.setBackground(new java.awt.Color(87, 141, 44));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Add");
-        jLabel1.setOpaque(true);
-        attendy.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, 30));
-
         jLabel2.setBackground(new java.awt.Color(87, 141, 44));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -190,14 +179,6 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
         attendy.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 170, 30));
-
-        course2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "TYCS", "SYCS", "FYCS" }));
-        course2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                course2ActionPerformed(evt);
-            }
-        });
-        attendy.add(course2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 170, 30));
 
         attendance_check.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -272,31 +253,22 @@ public class dashboard extends javax.swing.JFrame {
         jLabel4.setOpaque(true);
         anoun.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
 
-        jLabel3.setBackground(new java.awt.Color(87, 141, 44));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Previous Announcements");
-        jLabel3.setOpaque(true);
-        anoun.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 170, 30));
-
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane3.setViewportView(jTextArea2);
 
         anoun.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 510, 110));
 
-        jLabel8.setBackground(new java.awt.Color(87, 141, 44));
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Check Announcement");
-        jLabel8.setOpaque(true);
-        anoun.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 170, 30));
-
         jLabel14.setBackground(new java.awt.Color(87, 141, 44));
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Announce");
         jLabel14.setOpaque(true);
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
         anoun.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 170, 30));
 
         getContentPane().add(anoun, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
@@ -322,6 +294,26 @@ public class dashboard extends javax.swing.JFrame {
         jLabel5.setText("Syllabus");
         jLabel5.setOpaque(true);
         syll.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        subject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "TYCS", "SYCS", "FYCS" }));
+        syll.add(subject, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 130, 40));
+
+        jLabel3.setBackground(new java.awt.Color(0, 102, 51));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("GO");
+        jLabel3.setOpaque(true);
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        syll.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 60, 40));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 0, 0));
+        jLabel8.setText("PDF Application will open");
+        syll.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 260, 40));
 
         getContentPane().add(syll, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 80, 715, 440));
 
@@ -351,6 +343,26 @@ public class dashboard extends javax.swing.JFrame {
 
         header.setBackground(new java.awt.Color(46, 95, 117));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setBackground(new java.awt.Color(38, 130, 141));
+        jLabel26.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(19, 52, 52));
+        jLabel26.setText("Welcome to Vikas College Teacher Desk");
+        jLabel26.setOpaque(true);
+        header.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 730, 40));
+
+        jLabel1.setBackground(new java.awt.Color(102, 0, 51));
+        jLabel1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Log Off");
+        jLabel1.setOpaque(true);
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 170, 60));
+
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 80));
 
         sidepane.setBackground(new java.awt.Color(29, 70, 11));
@@ -740,44 +752,6 @@ public class dashboard extends javax.swing.JFrame {
         boks.setVisible(false);
     }//GEN-LAST:event_settingsMouseClicked
 
-    private void subject2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_subject2ActionPerformed
-
-    private void course2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_course2ActionPerformed
-        if(course2.getSelectedItem()=="TYCS")
-        {
-            subject2.removeAllItems();
-            subject2.addItem("IOT");
-            subject2.addItem("Linux");
-            subject2.addItem("STQA");
-            subject2.addItem("Gaming");
-            subject2.addItem("Networking");            
-        }
-        else if(course2.getSelectedItem()=="SYCS")
-        {
-            subject2.removeAllItems();
-            subject2.addItem("Linux");
-            subject2.addItem("Java");
-            subject2.addItem("Networks");
-            subject2.addItem("Graphs");
-            subject2.addItem("Python");            
-        }
-        else if(course2.getSelectedItem()=="FYCS")
-        {
-            subject2.removeAllItems();
-            subject2.addItem("FOSS");
-            subject2.addItem("Calculus");
-            subject2.addItem("Statistics");
-            subject2.addItem("IOT");
-            subject2.addItem("Python");            
-        }
-        else if(course2.getSelectedItem()=="")
-        {
-            subject2.removeAllItems();          
-        }
-    }//GEN-LAST:event_course2ActionPerformed
-
     private void course1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_course1ActionPerformed
         if(course1.getSelectedItem()=="TYCS")
         {
@@ -819,9 +793,10 @@ public class dashboard extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         Vector headers = new Vector();
         Vector data = new Vector();
-        File file = new File("D:\\attendance.xls");
+        
         if(course1.getSelectedItem()=="TYCS")
         {
+            File file = new File("D:\\Thetif\\TYCS.xls");
             if(subject1.getSelectedItem()=="IOT")
             {
                 try 
@@ -880,23 +855,376 @@ public class dashboard extends javax.swing.JFrame {
             }
             else if(subject1.getSelectedItem()=="STQA")
             {
-            
-            }else if(subject1.getSelectedItem()=="Gaming")
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(2);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Gaming")
             {
-            
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(3);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             else if(subject1.getSelectedItem()=="Networking")
             {
-            
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(4);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         else if(course1.getSelectedItem()=="SYCS")
         {
-            
+            File file = new File("D:\\Thetif\\SYCS.xls");
+            if(subject1.getSelectedItem()=="Linux")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(0);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Java")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(1);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Networks")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(2);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Graphs")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(3);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Python")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(4);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
         else if(course1.getSelectedItem()=="FYCS")
         {
-            
+            File file = new File("D:\\Thetif\\FYCS.xls");
+            if(subject1.getSelectedItem()=="FOSS")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(0);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Calculus")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(1);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Statistics")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(2);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="IOT")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(3);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(subject1.getSelectedItem()=="Python")
+            {
+                try 
+                {
+                    Workbook workbook = Workbook.getWorkbook(file);
+                    Sheet sheet = workbook.getSheet(4);
+                    headers.clear();
+                    for (int i = 0; i < sheet.getColumns(); i++)
+                    {
+                        Cell cell1 = sheet.getCell(i, 0);
+                        headers.add(cell1.getContents());
+                    }
+                    data.clear();
+                    for (int j = 1; j < sheet.getRows(); j++) 
+                    {
+                        Vector d = new Vector();
+                        for (int i = 0; i < sheet.getColumns(); i++)
+                        {
+                            Cell cell = sheet.getCell(i, j);
+                            d.add(cell.getContents());
+                        }
+                        d.add("\n");
+                        data.add(d);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
         DefaultTableModel model = new DefaultTableModel(data,headers);
         attendance_check.setModel(model);
@@ -905,6 +1233,56 @@ public class dashboard extends javax.swing.JFrame {
         attendance_check.setModel(model);
         attendance_check.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        if(!jTextArea2.equals(null))
+        {
+            JOptionPane.showMessageDialog(null, "Please enter announcement!");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Your announemnts will be declared!");
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        //File files = new File("D:\\Thetif\\tycs.pdf");
+        if(subject.getSelectedItem()=="TYCS")
+        {
+            if (Desktop.isDesktopSupported()) {
+                try {
+                    File myFile = new File( "D:\\Thetif\\tycs.pdf");
+                    Desktop.getDesktop().open(myFile);
+                } catch (IOException ex) {
+                    // no application registered for PDFs
+                }
+            }
+        }
+        else if(subject.getSelectedItem()=="SYCS")
+        {
+            if (Desktop.isDesktopSupported()) {
+                try {
+                    File myFile = new File( "D:\\Thetif\\sycs.pdf");
+                    Desktop.getDesktop().open(myFile);
+                } catch (IOException ex) {
+                    // no application registered for PDFs
+                }
+            }
+        }
+        else if(subject.getSelectedItem()=="YCS")
+        {
+            if (Desktop.isDesktopSupported()) {
+                try {
+                    File myFile = new File( "D:\\Thetif\\fycs.pdf");
+                    Desktop.getDesktop().open(myFile);
+                } catch (IOException ex) {
+                    // no application registered for PDFs
+                }
+            }
+        }
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     
     public static void main(String args[]) {
@@ -947,7 +1325,6 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel books;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> course1;
-    private javax.swing.JComboBox<String> course2;
     private javax.swing.JPanel dasb;
     private javax.swing.JLabel dashy;
     private javax.swing.JLabel dates;
@@ -972,6 +1349,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -992,8 +1370,8 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel setsng;
     private javax.swing.JLabel settings;
     private javax.swing.JPanel sidepane;
+    private javax.swing.JComboBox<String> subject;
     private javax.swing.JComboBox<String> subject1;
-    private javax.swing.JComboBox<String> subject2;
     private javax.swing.JPanel syll;
     private javax.swing.JLabel syllabus;
     // End of variables declaration//GEN-END:variables
